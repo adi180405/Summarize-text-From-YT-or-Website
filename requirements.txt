@@ -1,4 +1,5 @@
 validators
+unstructured
 streamlit
 pydantic
 langchain
