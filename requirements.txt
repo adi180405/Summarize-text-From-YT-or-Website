@@ -1,4 +1,5 @@
-
+validators
+streamlit
 pydantic
 langchain
 langgraph
