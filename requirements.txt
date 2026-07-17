@@ -4,6 +4,7 @@ streamlit
 pydantic
 langchain
  youtube-transcript-api
+pytube
 langgraph
 langchain_community
 langchain_core
