@@ -34,8 +34,8 @@ if st.button("Summarize the content from YT or Website"):
             with st.spinner("waiting..."):
                 llm=ChatGroq(model="llama-3.1-8b-instant",groq_api_key=groq_api_key)
                 ##loading the website or yt video data
-                if "youtube.com" in generic_url:
-                    loader = YoutubeLoader.from_youtube_url(generic_url,add_video_info=True)
+                if "youtube.com" in generic_url or "youtu.be" in generic_url:
+                    loader = YoutubeLoader.from_youtube_url(generic_url, add_video_info=False)
                 else:
                     loader = UnstructuredURLLoader(urls=[generic_url],ssl_verify=False,
                     headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"})
