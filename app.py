@@ -40,7 +40,9 @@ if st.button("Summarize the content from YT or Website"):
                     loader = UnstructuredURLLoader(urls=[generic_url],ssl_verify=False,
                     headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"})
                 docs = loader.load()
-
+                if not docs or not any(d.page_content.strip() for d in docs):
+                    st.error("Couldn't extract any content from this URL. The site may block scraping or require JavaScript.")
+                    st.stop()
                 #chain for summarization
                 chain=load_summarize_chain(llm,chain_type="stuff",prompt=prompt)
                 output_summary=chain.run(docs)
