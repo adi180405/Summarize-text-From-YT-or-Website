@@ -3,6 +3,7 @@ unstructured
 streamlit
 pydantic
 langchain
+ youtube-transcript-api
 langgraph
 langchain_community
 langchain_core
